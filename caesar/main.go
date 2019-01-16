@@ -12,8 +12,11 @@ func main() {
 	fmt.Scanf("%d\n", &delta)
 
 	var ret []rune
-	for _, ch := range input {
+	for _, ch := range input[:length] {
 		ret = append(ret, cipher(ch, delta))
+	}
+	for _, ch := range input[length:] {
+		ret = append(ret, ch)
 	}
 	fmt.Println(string(ret))
 }
